@@ -1,0 +1,19 @@
+%flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%panel-button {
+  background-color: $black;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  font-size: 16px;
+  line-height: 21px;
+  margin-top: 24px;
+  cursor: pointer;
+}
