@@ -1,4 +1,4 @@
-# ida-frontend-test
+# frontend-test
 
 ## Build Setup
 
