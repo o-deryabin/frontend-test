@@ -18,12 +18,12 @@
           <path d="M5 0H0L2.5 2.5L5 0Z" fill="#59606D" />
         </svg>
       </span>
-      <div
-        :class="[$style.heading__menu, menu ? $style.heading__menu_active : '']"
-      >
-        <div @click="sortProduct(1)">По цене</div>
-        <div @click="sortProduct(2)">По популярности</div>
-      </div>
+      <transition name="menu">
+        <div v-if="menu" :class="$style.heading__menu">
+          <div @click="sortProduct(1)">По цене</div>
+          <div @click="sortProduct(2)">По популярности</div>
+        </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -81,10 +81,6 @@ export default {
     font-size: 32px;
     line-height: 41px;
     color: $black;
-    // @media (min-width: 470px) {
-    //   font-size: 32px;
-    //   line-height: 41px;
-    // }
   }
   &__sort {
     color: $black;
@@ -108,13 +104,7 @@ export default {
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     padding: 8px 0;
-    z-index: -1;
-    opacity: 0;
-    transition: 0.3s;
-    &_active {
-      z-index: 15;
-      opacity: 1;
-    }
+    z-index: 15;
     div {
       padding: 4px 12px;
       color: $gray;

@@ -7,7 +7,7 @@
       <!-- Компонент товаров -->
       <PanelItem v-for="(item, index) in getCard" :key="index" :item="item" />
     </div>
-    <!-- Оформление звказа -->
+    <!-- Оформление заказа -->
     <div :class="$style.panel__subtitle">Оформить заказ</div>
     <!-- Форма с данными -->
     <form @submit.prevent="send">
@@ -30,6 +30,7 @@
             $style.panel__input,
             errors.tel ? $style.panel__input_error : ''
           ]"
+          v-mask="'+7 (###) ###-##-##'"
           placeholder="Телефон"
         />
         <!-- Поле для ввода адреса -->
@@ -53,8 +54,10 @@
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
+import { mask } from "vue-the-mask";
 
 export default {
+  directives: { mask },
   data: () => ({
     form: {
       name: "",

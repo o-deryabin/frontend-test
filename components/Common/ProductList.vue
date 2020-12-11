@@ -41,7 +41,7 @@ export default {
 
     this.SORT_PRODUCTS(); // После загрузки продуктов, сразу их сортируем
 
-    this.loader = false; // Потом переключаем компонент loader, на список продуктов
+    this.loader = false; // Потом переключаем компонент loader на список продуктов
   }
 };
 </script>

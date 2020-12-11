@@ -1,0 +1,40 @@
+// Анимации для страниц
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+// Анимация для корзины
+.panel-enter-active,
+.panel-leave-active {
+  transition: opacity 0.3s, transform 0.5s;
+}
+.panel-enter,
+.panel-leave-active {
+  transform: translateX(10%);
+  opacity: 0;
+}
+
+// Анимация для блока сообщений
+.message-enter-active,
+.message-leave-active {
+  transition: all 0.5s;
+}
+.message-enter,
+.message-leave-active {
+  opacity: 0;
+}
+
+// Анимация для меню выбора сортировки
+.menu-enter-active,
+.menu-leave-active {
+  transition: all 0.5s;
+}
+.menu-enter,
+.menu-leave-active {
+  opacity: 0;
+}

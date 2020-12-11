@@ -1,5 +1,5 @@
 <template>
-  <!-- Копонент отправки -->
+  <!-- Компонент отправки -->
   <div :class="$style.panel__send">
     <!-- Картинка  -->
     <img :class="$style.panel__emoji" :src="'/ok.png'" alt="" />
@@ -19,6 +19,8 @@ export default {};
 </script>
 
 <style module lang="scss">
+@import "~/assets/scss/extends.scss";
+
 .panel {
   &__send {
     position: absolute;
@@ -27,11 +29,9 @@ export default {};
     right: 0;
     bottom: 0;
     z-index: -1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     flex-direction: column;
+    @extend %flex-center;
   }
   &__emoji {
     width: 80px;

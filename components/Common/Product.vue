@@ -34,7 +34,7 @@
         alt=""
       />
 
-      <!-- Добовление в корзину -->
+      <!-- Добавление в корзину -->
       <div
         :class="[
           $style.product__card,
@@ -77,7 +77,7 @@
       <div :class="$style.product__price">{{ item.price }} ₽</div>
     </div>
 
-    <!-- Сообщение о об успехе или неудаче -->
+    <!-- Сообщение об успехе или неудаче -->
     <transition name="message">
       <Message
         v-if="message.state"
@@ -110,13 +110,13 @@ export default {
       SET_CARD_ITEM: "card/SET_CARD_ITEM"
     }),
 
-    // Добовляем продукт в корзину
+    // Добавляем продукт в корзину
     setCard(item) {
       // Проверяем наличие этого продукта в корзине
       const tmp = this.getCard.find(i => i.id === item.id);
 
       if (!tmp) {
-        // Если нет, то добовляем и выводим сообщение поб успехе
+        // Если нет, то добавляем и выводим сообщение об успехе
         this.message = {
           state: true,
           name: item.name,
@@ -125,7 +125,7 @@ export default {
 
         this.SET_CARD_ITEM(item);
       } else {
-        // Если есть, то выводим сообщение об неудаче
+        // Если есть, то выводим сообщение о неудаче
         this.message = {
           state: true,
           name: item.name
@@ -186,9 +186,6 @@ export default {
     svg {
       fill: #959dad;
       transition: 0.3s;
-      &:active {
-        transform: scale(1);
-      }
       &:hover {
         transform: scale(1.2);
         fill: $black;

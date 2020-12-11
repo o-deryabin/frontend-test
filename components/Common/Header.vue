@@ -93,11 +93,9 @@ export default {
     border-radius: 50%;
     width: 12px;
     height: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: absolute;
     right: 0;
+    @extend %flex-center;
   }
 }
 </style>

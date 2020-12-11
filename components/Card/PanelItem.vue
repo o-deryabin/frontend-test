@@ -145,7 +145,7 @@ export default {
   &__rating {
     font-size: 10px;
     line-height: 13px;
-    color: #f2c94c;
+    color: $yellow;
     display: flex;
     align-items: center;
     position: absolute;

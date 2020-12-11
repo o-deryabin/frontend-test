@@ -4,6 +4,12 @@
   align-items: center;
 }
 
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 %panel-button {
   background-color: $black;
   color: #fff;

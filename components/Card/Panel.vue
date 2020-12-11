@@ -1,5 +1,5 @@
 <template>
-  <!-- Обертка корзина -->
+  <!-- Обертка корзины -->
   <div :class="[$style.panel__wrapper]">
     <!-- Боковая панель -->
     <div :class="$style.panel">
@@ -32,7 +32,7 @@
         </div>
       </div>
 
-      <!-- Компонент, когда в корзине усть элементы -->
+      <!-- Компонент, когда в корзине есть элементы -->
       <template v-if="getCard.length">
         <CompletePanel @send="send = true" />
       </template>
