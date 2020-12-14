@@ -5,27 +5,26 @@ export default {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" }
+      { hid: "description", name: "description", content: "" },
     ],
     link: [
-     
       {
         rel: "preconnect",
-        href: "https://fonts.gstatic.com"
+        href: "https://fonts.gstatic.com",
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=PT+Sans&display=swap"
-      }
-    ]
+        href: "https://fonts.googleapis.com/css2?family=PT+Sans&display=swap",
+      },
+    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     {
       src: "~/assets/scss/index.scss",
-      lang: "sass"
-    }
+      lang: "sass",
+    },
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -41,7 +40,7 @@ export default {
   modules: ["@nuxtjs/style-resources"],
 
   styleResources: {
-    scss: ["./assets/scss/variables.scss"]
+    scss: ["./assets/scss/variables.scss"],
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
@@ -49,9 +48,9 @@ export default {
     loaders: {
       cssModules: {
         modules: {
-          localIdentName: "[local]--[Frida]_[hash:base64:4]"
-        }
-      }
-    }
-  }
+          localIdentName: "[local]--[Frida]_[hash:base64:4]",
+        },
+      },
+    },
+  },
 };
