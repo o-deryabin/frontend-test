@@ -104,7 +104,7 @@ export default {
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     padding: 8px 0;
-    z-index: 15;
+    z-index: 5;
     div {
       padding: 4px 12px;
       color: $gray;
