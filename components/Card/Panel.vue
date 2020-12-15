@@ -8,7 +8,7 @@
         <!-- Заголовок -->
         <div :class="$style.panel__title">Корзина</div>
         <!-- Кнопка закрытия корзины -->
-        <div @click="$emit('panel')">
+        <div @click="closePanel">
           <svg
             width="24"
             height="24"
@@ -44,7 +44,7 @@
 
       <!-- Компонент пустой корзины -->
       <template v-else>
-        <EmptyPanel @panel="$emit('panel')" />
+        <EmptyPanel @panel="closePanel" />
       </template>
     </div>
   </div>
@@ -62,7 +62,15 @@ export default {
       getCard: "card/getCard"
     })
   },
-  mounted() {}
+  methods: {
+    closePanel() {
+      this.$emit("panel");
+      document.querySelector("body").style.overflow = "auto";
+    }
+  },
+  mounted() {
+    document.querySelector("body").style.overflow = "hidden";
+  }
 };
 </script>
 

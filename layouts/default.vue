@@ -50,6 +50,10 @@ html {
   box-sizing: border-box;
 }
 
+.lock {
+  overflow: hidden !important;
+}
+
 .wrapper {
   margin-top: 70px;
   position: relative;
@@ -58,14 +62,6 @@ html {
 .content {
   @media (min-width: 1000px) {
     display: flex;
-  }
-}
-
-.panel__wrapper_active {
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  z-index: 20 !important;
-  .panel {
-    transform: translateX(0) !important;
   }
 }
 </style>

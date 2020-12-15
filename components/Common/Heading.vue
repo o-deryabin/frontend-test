@@ -75,6 +75,7 @@ export default {
   @extend %flex-space-between;
   @media (max-width: 470px) {
     display: block;
+    padding-bottom: 15px;
   }
   &__title {
     font-weight: bold;

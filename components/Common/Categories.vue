@@ -62,6 +62,9 @@ export default {
   margin-bottom: 16px;
   color: $gray-light;
   cursor: pointer;
+  @media (max-width: 470px) {
+    margin-bottom: 6px;
+  }
   &__wrapper {
     min-width: 140px;
     display: flex;
