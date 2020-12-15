@@ -1,5 +1,7 @@
 # frontend-test
 
+## The assembled project can be viewed here https://idafrontendtest.herokuapp.com
+
 ## Build Setup
 
 ```bash
