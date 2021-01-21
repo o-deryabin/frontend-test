@@ -1,18 +1,16 @@
 <template>
   <!-- Список катерорий -->
-  <nav :class="$style.category__wrapper">
+  <nav :class="$style.wrapper">
     <!-- Катерогии -->
-    <div
-      :class="[
-        $style.category,
-        item.id === categoryId ? $style.category__active : ''
-      ]"
+    <nuxt-link
       v-for="(item, index) in getProductsCategories"
+      :to="'/categories/' + item.id"
+      :class="$style.category"
+      :active-class="$style.active"
       :key="index"
-      @click.prevent="updateCategoryId(item.id)"
     >
       {{ item.name }}
-    </div>
+    </nuxt-link>
   </nav>
 </template>
 
@@ -20,7 +18,6 @@
 import { mapActions, mapGetters } from "vuex";
 
 export default {
-  data: () => ({ categoryId: 1 }),
   computed: {
     ...mapGetters({
       getProductsCategories: "product/getProductsCategories"
@@ -29,27 +26,9 @@ export default {
   methods: {
     ...mapActions({
       fetchProductCategories: "product/fetchProductCategories"
-    }),
-    // Редирект
-    updateCategoryId(id) {
-      // Меням класс active в navbar
-      this.categoryId = id;
-
-      // Редирект на нужную  страницу по id
-      if (id === 1) {
-        return this.$router.push("/backpack");
-      }
-
-      if (id === 2) {
-        return this.$router.push("/messenger-bags");
-      }
-
-      if (id === 3) {
-        return this.$router.push("/business-bags");
-      }
-    }
+    })
   },
-  async mounted() {
+  async fetch() {
     // Загружаем категории
     await this.fetchProductCategories();
   }
@@ -57,26 +36,29 @@ export default {
 </script>
 
 <style module lang="scss">
+.wrapper {
+  min-width: 140px;
+  display: flex;
+  justify-content: space-around;
+  @media (min-width: 1000px), (max-width: 470px) {
+    display: inline-block;
+    margin-right: 16px;
+  }
+}
+
 .category {
+  display: block;
   line-height: 21px;
   margin-bottom: 16px;
   color: $gray-light;
-  cursor: pointer;
-  &__wrapper {
-    min-width: 140px;
-    display: flex;
-    justify-content: space-around;
-    @media (min-width: 1000px), (max-width: 470px) {
-      display: inline-block;
-      margin-right: 16px;
-    }
-  }
+  text-decoration: none;
   &:hover {
     color: $gray;
   }
-  &__active {
-    text-decoration: underline;
-    color: $black;
-  }
+}
+
+.active {
+  text-decoration: underline;
+  color: $black;
 }
 </style>

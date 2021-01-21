@@ -3,14 +3,7 @@
     <!-- Шапка -->
     <Header @panel="isActivePanel = !isActivePanel" />
     <main :class="$style.wrapper" class="container">
-      <!-- Заголоавок и панель сортировки -->
-      <Heading />
-      <div :class="$style.content">
-        <!-- Переключение между категориями -->
-        <Categories />
-
-        <Nuxt />
-      </div>
+      <Nuxt />
     </main>
 
     <!-- Корзина -->
@@ -53,19 +46,5 @@ html {
 .wrapper {
   margin-top: 70px;
   position: relative;
-}
-
-.content {
-  @media (min-width: 1000px) {
-    display: flex;
-  }
-}
-
-.panel__wrapper_active {
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  z-index: 20 !important;
-  .panel {
-    transform: translateX(0) !important;
-  }
 }
 </style>

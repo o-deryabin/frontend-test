@@ -5,7 +5,7 @@
 <script>
 export default {
   mounted() {
-    this.$router.push("/backpack"); // Редирект на страницу с рюкзаками
+    this.$router.push("/categories/1");
   }
 };
 </script>

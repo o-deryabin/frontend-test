@@ -50,7 +50,6 @@ export default {
     ...mapMutations({
       SORT_PRODUCTS: "product/SORT_PRODUCTS"
     }),
-
     // Сорторовка продуктов
     sortProduct(value) {
       // Закрываем меню

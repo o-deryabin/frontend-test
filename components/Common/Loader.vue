@@ -1,10 +1,12 @@
 <template>
   <!-- Loader -->
-  <div :class="$style.loader">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+  <div :class="$style.wrapper">
+    <div :class="$style.loader">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
 </template>
 
@@ -13,9 +15,20 @@ export default {};
 </script>
 
 <style module lang="scss">
+.wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 10;
+}
 .loader {
   display: inline-block;
-  position: fixed;
   width: 80px;
   height: 80px;
   left: 50%;

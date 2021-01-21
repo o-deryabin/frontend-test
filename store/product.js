@@ -1,5 +1,6 @@
 export const state = () => ({
   products: [],
+  sortValue: "price",
   productsCategories: []
 });
 
@@ -55,14 +56,19 @@ export const mutations = {
   },
 
   // Сортировака продуктов
-  SORT_PRODUCTS(state, payload = "price") {
-    state.products = state.products.sort((a, b) => b[payload] - a[payload]);
+  SORT_PRODUCTS(state, payload) {
+    state.sortValue = payload
   }
 };
 export const getters = {
   // Получение продуктов из state
   getProducts(state) {
     return state.products;
+  },
+
+  sortProducts(state) {
+    let sortProducts = [...state.products];
+    return sortProducts.sort((a, b) => b[state.sortValue] - a[state.sortValue]);
   },
 
   // Получение списка продуктов из state
